@@ -64,8 +64,8 @@ The output will be a CSV file, named by default, `uiuc_courses_offered.csv`.
 ### 1. No Data Found
 
 If the script outputs `No data found` for a course, this could mean:
-Markup: * The course has no semesters listed in the catalog.
-	* The course page structure might have changed, in which case you may need to inspect the HTML to ensure that the correct elements are targeted.
+* The course has no semesters listed in the catalog.
+* The course page structure might have changed, in which case you may need to inspect the HTML to ensure that the correct elements are targeted.
 
 ### 2. Failed to Retrive Data
 
