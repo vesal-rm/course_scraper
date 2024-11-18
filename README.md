@@ -7,7 +7,7 @@ This Python script scrapes the past semester offerings for courses at the Univer
 Before running the script, ensure you have the following Python packages installed:
 
 ```
-pip install requests beautifulsoup4 pandas
+pip install requests beautifulsoup4 pandas openpyxl
 ```
 
 ## How it Works
@@ -15,6 +15,7 @@ pip install requests beautifulsoup4 pandas
 ### 1. Input Course List
 
 The script reads a list of course codes from a text file (e.g., `courses.txt`). Each course code should be in the format `[DepartmentAbbreviation][CourseNumber]` (e.g., `CS101`, `MATH221`).
+Note: If using `course_scraper_excel.py`, the course codes should be input as an excel file (e.g. `courses.xlsx`). Each course department abbreviation should be in the first column and the course number in the second column. The script will skip the first row to allow for column headers.
 
 ### 2. Building the URL
 
@@ -47,17 +48,24 @@ STAT403
 PHYS280
 ```
 
+If using `course_scraper_excel.py`, the first row of the excel file should consist of column headers. From the second row on, the department abbreviations should be listed in the first column, and the course number should be listed in the second column.
+
 ### 2. Run the Script
 
 You can run the script by executing it in your Python environment:
 ```
 python scrape_courses.py
 ```
+OR
+```
+python scrape_courses_excel.py
+```
 Make sure to update the script with the correct file paths for your input and output files if necessary.
 
 ### 3. Output
 
 The output will be a CSV file, named by default, `uiuc_courses_offered.csv`.
+If using the excel version of the script, the output will be an excel file, named by default `uiuc_courses_offered.xlsx`.
 
 ## Troubleshooting
 
